@@ -1,0 +1,276 @@
+<html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Velas - Página 2</title>
+    <style>
+        body {
+            background-color: beige;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            color: #333;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: #8b4513;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            animation: textShadowPulse 2s ease-in-out infinite alternate;
+        }
+
+
+        @keyframes textShadowPulse {
+            0% {
+                text-shadow: 0 0 5px rgba(139, 69, 19, 0.5);
+            }
+
+            100% {
+                text-shadow: 0 0 10px rgba(139, 69, 19, 1), 0 0 20px rgba(139, 69, 19, 0.3);
+            }
+        }
+
+
+
+
+        ol {
+            line-height: 1.5;
+            max-width: 800px;
+            margin: auto;
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+            transition: background-color 0.3s;
+        }
+
+        li:hover {
+            background-color: #fff9e6;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        .titulo {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+            color: #d2691e;
+            transition: transform 0.3s ease-out;
+        }
+
+        li:hover .titulo {
+
+            transform: translateX(5px);
+        }
+
+
+
+        .vela-info {
+            margin-left: 15px;
+        }
+
+        .vela-imagen {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 3px solid #f9f9f9;
+        }
+
+
+        .boton-pedido {
+            background-color: #d2691e;
+            color: white;
+            padding: 8px 12px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-top: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+
+            animation: colorPulse 3s infinite;
+        }
+
+        .boton-pedido:hover {
+            background-color: #a0522d;
+        }
+
+
+        @keyframes colorPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(210, 105, 30, 0.7);
+            }
+
+            50% {
+                box-shadow: 0 0 0 5px rgba(210, 105, 30, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(210, 105, 30, 0.7);
+            }
+        }
+
+
+
+
+
+        .navegacion {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px dashed #999;
+        }
+
+        .navegacion a {
+            font-size: 1.2em;
+            color: #8b4513;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .navegacion a:hover {
+            text-decoration: underline;
+            color: #d2691e;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🕯 Catálogo de Velas Aromáticas - Nuevos Aromas</h1>
+    <ol>
+        <li>
+            <img src="vela-fresa.jpg" alt="Vela Fresa" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Fresa"</span>
+                Aroma: fresa dulce.
+                <span class="precio">💰 Precio: $140 MXN</span>
+                <a href="pedido.html?vela=Fresa&precio=140.00&imagen=vela-fresa.jpg" class="boton-pedido">
+                    Hacer Pedido | $140 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-chocolate-postre.jpg" alt="Vela Chocolate" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Chocolate"</span>
+                Aroma: cacao caliente.
+                <span class="precio">💰 Precio: $160 MXN</span>
+                <a href="pedido.html?vela=Chocolate&precio=160.00&imagen=vela-chocolate-postre.jpg"
+                    class="boton-pedido">
+                    Hacer Pedido | $160 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-limon.jpg" alt="Vela Limón" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Limón"</span>
+                Aroma: limón fresco.
+                <span class="precio">💰 Precio: $130 MXN</span>
+                <a href="pedido.html?vela=Limón&precio=130.00&imagen=vela-limon.jpg" class="boton-pedido">
+                    Hacer Pedido | $130 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-canela-naranja.jpg" alt="Vela Canela" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Canela"</span>
+                Aroma: canela especiada.
+                <span class="precio">💰 Precio: $145 MXN</span>
+                <a href="pedido.html?vela=Canela&precio=145.00&imagen=vela-canela-naranja.jpg" class="boton-pedido">
+                    Hacer Pedido | $145 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-coco.jpg" alt="Vela Coco" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Coco"</span>
+                Aroma: coco tropical.
+                <span class="precio">💰 Precio: $150 MXN</span>
+                <a href="pedido.html?vela=Coco&precio=150.00&imagen=vela-coco.jpg" class="boton-pedido">
+                    Hacer Pedido | $150 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-lavanda.jpg" alt="Vela Lavanda" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Lavanda"</span>
+                Aroma: flores de lavanda.
+                <span class="precio">💰 Precio: $155 MXN</span>
+                <a href="pedido.html?vela=Lavanda&precio=155.00&imagen=vela-lavanda.jpg" class="boton-pedido">
+                    Hacer Pedido | $155 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-manzana.jpg" alt="Vela Manzana" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Manzana"</span>
+                Aroma: manzana verde.
+                <span class="precio">💰 Precio: $135 MXN</span>
+                <a href="pedido.html?vela=Manzana&precio=135.00&imagen=vela-manzana.jpg" class="boton-pedido">
+                    Hacer Pedido | $135 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-vainilla-simple.jpg" alt="Vela Vainilla" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Vainilla"</span>
+                Aroma: vainilla cremosa.
+                <span class="precio">💰 Precio: $145 MXN</span>
+                <a href="pedido.html?vela=Vainilla&precio=145.00&imagen=vela-vainilla-simple.jpg" class="boton-pedido">
+                    Hacer Pedido | $145 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-rosa.jpg" alt="Vela Rosa" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Rosa"</span>
+                Aroma: pétalos de rosa.
+                <span class="precio">💰 Precio: $150 MXN</span>
+                <a href="pedido.html?vela=Rosa&precio=150.00&imagen=vela-rosa.jpg" class="boton-pedido">
+                    Hacer Pedido | $150 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-menta.jpg" alt="Vela Menta" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Menta"</span>
+                Aroma: menta fresca.
+                <span class="precio">💰 Precio: $140 MXN</span>
+                <a href="pedido.html?vela=Menta&precio=140.00&imagen=vela-menta.jpg" class="boton-pedido">
+                    Hacer Pedido | $140 MXN
+                </a>
+            </div>
+        </li>
+    </ol>
+
+    <div class="navegacion">
+        <a href="catalogo1.html">← Catálogo Anterior (Pág. 1)</a>
+        <a href="catalogo3.html">Ver más velas (Página 3) →</a>
+    </div>
+</body>
+
+</html>

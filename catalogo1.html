@@ -1,0 +1,283 @@
+<html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Velas - Página 1</title>
+    <style>
+        body {
+            background-color: beige;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            color: #333;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: #8b4513;
+
+            animation: bounceIn 2s ease-out;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translateY(10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+
+
+        ol {
+            line-height: 1.5;
+            max-width: 800px;
+            margin: auto;
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+            transition: background-color 0.3s;
+
+        }
+
+        li:hover {
+            background-color: #fff9e6;
+
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        .titulo {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+            color: #d2691e;
+
+            transition: transform 0.3s ease-out;
+
+        }
+
+        li:hover .titulo {
+
+            transform: translateX(5px);
+        }
+
+
+
+        .vela-info {
+            margin-left: 15px;
+        }
+
+        .vela-imagen {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 3px solid #f9f9f9;
+        }
+
+        .boton-pedido {
+            background-color: #d2691e;
+            color: white;
+            padding: 8px 12px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-top: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, box-shadow 0.3s;
+
+            animation: shadowPulse 2s infinite alternate;
+        }
+
+        .boton-pedido:hover {
+            background-color: #a0522d;
+            box-shadow: 0 0 10px rgba(210, 105, 30, 0.7);
+
+        }
+
+
+        @keyframes shadowPulse {
+            0% {
+                box-shadow: 0 0 5px rgba(210, 105, 30, 0.4);
+            }
+
+            100% {
+                box-shadow: 0 0 15px rgba(210, 105, 30, 0.8);
+            }
+        }
+
+        .navegacion {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px dashed #999;
+        }
+
+        .navegacion a {
+            font-size: 1.2em;
+            color: #8b4513;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .navegacion a:hover {
+            text-decoration: underline;
+            color: #d2691e;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🕯 Catálogo de Velas Aromáticas</h1>
+    <ol>
+        <li>
+            <img src="vela-bosque.jpg" alt="Vela Bosque Encantado" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Bosque Encantado"</span>
+                Aroma: pino, cedro y eucalipto.
+                <span class="precio">💰 Precio: $189 MXN</span>
+                <a href="pedido.html?vela=Bosque Encantado&precio=189.00&imagen=vela-bosque.jpg" class="boton-pedido">
+                    Hacer Pedido | $189 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-vainilla.jpg" alt="Vela Vainilla Dreams" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Vainilla Dreams"</span>
+                Aroma: vainilla cremosa con toque de coco.
+                <span class="precio">💰 Precio: $145 MXN</span>
+                <a href="pedido.html?vela=Vainilla Dreams&precio=145.00&imagen=vela-vainilla.jpg" class="boton-pedido">
+                    Hacer Pedido | $145 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-playa.jpg" alt="Vela Atardecer en la Playa" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Atardecer en la Playa"</span>
+                Aroma: coco, brisa marina y flor de tiaré.
+                <span class="precio">💰 Precio: $210 MXN</span>
+                <a href="pedido.html?vela=Atardecer en la Playa&precio=210.00&imagen=vela-playa.jpg"
+                    class="boton-pedido">
+                    Hacer Pedido | $210 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-cafe.jpg" alt="Vela Café de la Mañana" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Café de la Mañana"</span>
+                Aroma: café tostado y un toque de canela.
+                <span class="precio">💰 Precio: $175 MXN</span>
+                <a href="pedido.html?vela=Café de la Mañana&precio=175.00&imagen=vela-cafe.jpg" class="boton-pedido">
+                    Hacer Pedido | $175 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-flores.jpg" alt="Vela Flores Silvestres" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Flores Silvestres"</span>
+                Aroma: lavanda, jazmín y rosas frescas.
+                <span class="precio">💰 Precio: $160 MXN</span>
+                <a href="pedido.html?vela=Flores Silvestres&precio=160.00&imagen=vela-flores.jpg" class="boton-pedido">
+                    Hacer Pedido | $160 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-chocolate.jpg" alt="Vela Chocolate Caliente" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Chocolate Caliente"</span>
+                Aroma: cacao dulce con vainilla y malvavisco.
+                <span class="precio">💰 Precio: $199 MXN</span>
+                <a href="pedido.html?vela=Chocolate Caliente&precio=199.00&imagen=vela-chocolate.jpg"
+                    class="boton-pedido">
+                    Hacer Pedido | $199 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-citricos.jpg" alt="Vela Cítricos del Valle" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Cítricos del Valle"</span>
+                Aroma: naranja, mandarina y limón.
+                <span class="precio">💰 Precio: $155 MXN</span>
+                <a href="pedido.html?vela=Cítricos del Valle&precio=155.00&imagen=vela-citricos.jpg"
+                    class="boton-pedido">
+                    Hacer Pedido | $155 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-madera.jpg" alt="Vela Madera y Humo" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Madera & Humo"</span>
+                Aroma: sándalo, ámbar y humo suave.
+                <span class="precio">💰 Precio: $230 MXN</span>
+                <a href="pedido.html?vela=Madera y Humo&precio=230.00&imagen=vela-madera.jpg" class="boton-pedido">
+                    Hacer Pedido | $230 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-te-verde.jpg" alt="Vela Té Verde y Bambú" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Té Verde & Bambú"</span>
+                Aroma: fresco y relajante, con notas herbales.
+                <span class="precio">💰 Precio: $185 MXN</span>
+                <a href="pedido.html?vela=Té Verde y Bambú&precio=185.00&imagen=vela-te-verde.jpg" class="boton-pedido">
+                    Hacer Pedido | $185 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-noche-invierno.jpg" alt="Vela Noche de Invierno" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Noche de Invierno"</span>
+                Aroma: canela, clavo y vainilla.
+                <span class="precio">💰 Precio: $205 MXN</span>
+                <a href="pedido.html?vela=Noche de Invierno&precio=205.00&imagen=vela-noche-invierno.jpg"
+                    class="boton-pedido">
+                    Hacer Pedido | $205 MXN
+                </a>
+            </div>
+        </li>
+    </ol>
+
+    <div class="navegacion">
+        <a href="index.html">← Regresar a Inicio</a>
+        <a href="catalogo2.html">Ver más velas (Página 2) →</a>
+    </div>
+</body>
+
+</html>

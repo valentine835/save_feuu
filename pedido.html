@@ -1,0 +1,355 @@
+<html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sève y Feu - Formulario de Pedido</title>
+    <style>
+        body {
+            background-color: beige;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 30px;
+            background-color: #fffaf0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #8b4513;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            animation: fadeInColor 1.5s ease-out;
+        }
+
+        @keyframes fadeInColor {
+            0% {
+                opacity: 0;
+                color: #d2691e;
+            }
+
+            100% {
+                opacity: 1;
+                color: #8b4513;
+            }
+        }
+
+        .info-pedido {
+            display: flex;
+            align-items: center;
+            background-color: #f5f5dc;
+            border: 1px solid #d2691e;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            animation: slideInShadow 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes slideInShadow {
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+                box-shadow: 0 0 15px rgba(210, 105, 30, 0.3);
+            }
+        }
+
+        .info-pedido img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 20px;
+            border: 2px solid #8b4513;
+        }
+
+        .detalle-texto strong {
+            display: block;
+            font-size: 1.3em;
+            color: #8b4513;
+        }
+
+        .detalle-texto span {
+            font-size: 1.1em;
+            color: #555;
+            display: block;
+            margin-top: 5px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #fff;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #d2691e;
+            outline: none;
+        }
+
+        .cantidad-total {
+            display: flex;
+            gap: 20px;
+        }
+
+        .cantidad-total>div {
+            flex: 1;
+        }
+
+        .campo-total {
+            font-size: 1.1em;
+            color: #a0522d;
+            padding: 10px;
+            border: 1px solid #d2691e;
+            border-radius: 4px;
+            background-color: #fff8e1;
+            margin-top: 5px;
+            text-align: right;
+            font-weight: bold;
+            transition: background-color 0.1s;
+        }
+
+        .campo-total.recalculando {
+            animation: flashBackground 0.5s 1;
+        }
+
+        @keyframes flashBackground {
+            0% {
+                background-color: #d2691e;
+                color: white;
+            }
+
+            100% {
+                background-color: #fff8e1;
+                color: #a0522d;
+            }
+        }
+
+        input[type="submit"] {
+            background-color: #8b4513;
+            color: white;
+            padding: 12px 20px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #a0522d;
+            transform: scale(1.01) translateY(-1px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Mensaje de éxito */
+        .mensaje-exito {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: slideDown 0.5s ease-out;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+        }
+
+        .mensaje-exito.mostrar {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navegacion {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .navegacion a {
+            color: #d2691e;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navegacion a:hover {
+            color: #a0522d;
+            text-decoration: underline;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            const params = new URLSearchParams(window.location.search);
+            const nombre = params.get('vela');
+            const precio = params.get('precio');
+            const imagen = params.get('imagen');
+
+            const velaElement = document.getElementById('vela-nombre');
+            const precioElement = document.getElementById('vela-precio');
+            const imagenElement = document.getElementById('vela-imagen');
+            const inputVela = document.getElementById('input-vela');
+            const inputTotal = document.getElementById('input-total');
+            const selectCantidad = document.getElementById('cantidad');
+            const displayTotal = document.getElementById('display-total');
+
+            if (nombre && precio) {
+                velaElement.textContent = nombre;
+                precioElement.textContent = `Precio Unitario: $${parseFloat(precio).toFixed(2)} MXN`;
+                imagenElement.src = imagen;
+                inputVela.value = `${nombre} - $${precio} MXN`;
+
+                function actualizarTotal() {
+                    const cantidad = parseInt(selectCantidad.value);
+                    const precioFloat = parseFloat(precio);
+                    const totalEstimado = (cantidad * precioFloat).toFixed(2);
+
+                    displayTotal.textContent = `$${totalEstimado} MXN`;
+                    inputTotal.value = totalEstimado;
+
+                    displayTotal.classList.add('recalculando');
+                    setTimeout(() => {
+                        displayTotal.classList.remove('recalculando');
+                    }, 500);
+                }
+
+                actualizarTotal();
+                selectCantidad.addEventListener('change', actualizarTotal);
+
+            } else {
+                velaElement.textContent = "Ningún producto seleccionado.";
+                precioElement.textContent = "Por favor, regresa al catálogo para elegir una vela.";
+                imagenElement.style.display = 'none';
+                inputVela.value = "No especificado";
+                displayTotal.textContent = "N/A";
+            }
+
+            // Manejar el envío del formulario
+            const formulario = document.getElementById('formulario-pedido');
+            formulario.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Mostrar mensaje de éxito
+                const mensajeExito = document.getElementById('mensaje-exito');
+                mensajeExito.classList.add('mostrar');
+
+                // Scroll suave hacia el mensaje
+                mensajeExito.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Opcional: Limpiar el formulario después de 2 segundos
+                setTimeout(() => {
+                    formulario.reset();
+                    actualizarTotal();
+                }, 2000);
+            });
+        };
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Mensaje de éxito -->
+        <div id="mensaje-exito" class="mensaje-exito">
+            ✓ ¡Pedido realizado con éxito!
+        </div>
+
+        <h1>📋 Finalizar Pedido Individual</h1>
+
+        <div class="info-pedido">
+            <img id="vela-imagen" src="imagen-generica.jpg" alt="Vela seleccionada">
+            <div class="detalle-texto">
+                <p><strong>Artículo seleccionado:</strong> <strong id="vela-nombre">Cargando...</strong></p>
+                <span id="vela-precio">Precio Unitario: N/A</span>
+                <p>El total será confirmado al procesar tu solicitud.</p>
+            </div>
+        </div>
+
+        <p>Por favor, completa el siguiente formulario para confirmar tu pedido. Un representante de Sève y Feu se
+            pondrá en contacto contigo para verificar la disponibilidad y el total de tu compra.</p>
+
+        <form id="formulario-pedido" method="POST">
+            <input type="hidden" id="input-vela" name="Articulo_Solicitado" value="">
+            <input type="hidden" id="input-total" name="Total_Estimado" value="">
+
+            <div class="cantidad-total">
+                <div>
+                    <label for="cantidad">Cantidad de Velas:</label>
+                    <select id="cantidad" name="Cantidad" required>
+                        <option value="1">1 Unidad</option>
+                        <option value="2">2 Unidades</option>
+                        <option value="3">3 Unidades</option>
+                        <option value="4">4 Unidades</option>
+                        <option value="5">5 Unidades</option>
+                        <option value="10">10 (Paquete)</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Total Estimado (MXN):</label>
+                    <div id="display-total" class="campo-total">$0.00 MXN</div>
+                </div>
+            </div>
+
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="Nombre_Cliente" required>
+
+            <label for="contacto">Email o WhatsApp:</label>
+            <input type="text" id="contacto" name="Contacto_Cliente" required>
+
+            <label for="direccion">Dirección de Envío (Ciudad/Estado):</label>
+            <textarea id="direccion" name="Direccion_Envio" rows="3" required></textarea>
+
+            <label for="notas">Notas Adicionales:</label>
+            <textarea id="notas" name="Notas_Adicionales" rows="3"></textarea>
+
+            <input type="submit" value="Enviar Solicitud de Pedido">
+        </form>
+
+        <div class="navegacion">
+            <a href="index.html">← Volver al Inicio</a>
+        </div>
+    </div>
+</body>
+
+</html>

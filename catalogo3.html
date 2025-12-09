@@ -1,0 +1,289 @@
+<html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Velas - Página 3</title>
+    <style>
+        body {
+            background-color: beige;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: #8b4513;
+
+            animation: flameWaver 3s ease-in-out infinite alternate;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+
+        @keyframes flameWaver {
+            0% {
+                transform: skewX(-1deg);
+            }
+
+            100% {
+                transform: skewX(1deg);
+            }
+        }
+
+
+
+        ol {
+            max-width: 800px;
+            margin: auto;
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+            transition: background-color 0.3s;
+        }
+
+        li:hover {
+            background-color: #fff9e6;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+
+        .titulo {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+            color: #d2691e;
+            transition: transform 0.3s ease-out;
+        }
+
+        li:hover .titulo {
+            transform: scale(1.02);
+        }
+
+
+
+        .vela-info {
+            margin-left: 15px;
+        }
+
+        .vela-imagen {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 3px solid #f9f9f9;
+        }
+
+
+        .boton-pedido {
+            background-color: #d2691e;
+            color: white;
+            padding: 8px 12px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-top: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+
+        }
+
+        .boton-pedido:hover {
+            background-color: #a0522d;
+            transform: translateY(-2px);
+
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .navegacion {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px dashed #999;
+        }
+
+        .navegacion a {
+            font-size: 1.0em;
+            color: #8b4513;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .navegacion a:hover {
+            text-decoration: underline;
+            color: #d2691e;
+        }
+
+
+        .halloween-link {
+            color: #ff6600 !important;
+            font-size: 1.2em !important;
+            border: 2px solid #ff6600;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-left: 20px;
+            animation: halloweenGlow 1s ease-in-out infinite alternate;
+        }
+
+        .halloween-link:hover {
+            background-color: #ff6600;
+            color: white !important;
+        }
+
+
+        @keyframes halloweenGlow {
+            0% {
+                box-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+            }
+
+            100% {
+                box-shadow: 0 0 15px rgba(255, 102, 0, 1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🕯 Catálogo de Velas Aromáticas - Colección Especial</h1>
+    <ol>
+        <li>
+            <img src="vela-aurora.jpg" alt="Vela Aurora Boreal" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Aurora Boreal"</span>
+                Aroma: madera y especias.
+                <span class="precio">💰 Precio: $180 MXN</span>
+                <a href="pedido.html?vela=Aurora Boreal&precio=180.00&imagen=vela-aurora.jpg" class="boton-pedido">
+                    Hacer Pedido | $180 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-hierbas.jpg" alt="Vela Jardín de Hierbas" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Jardín de Hierbas"</span>
+                Aroma: hierbas frescas y florales.
+                <span class="precio">💰 Precio: $170 MXN</span>
+                <a href="pedido.html?vela=Jardín de Hierbas&precio=170.00&imagen=vela-hierbas.jpg" class="boton-pedido">
+                    Hacer Pedido | $170 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-tulum.jpg" alt="Vela Noches de Tulum" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Noches de Tulum"</span>
+                Aroma: coco y jazmín.
+                <span class="precio">💰 Precio: $200 MXN</span>
+                <a href="pedido.html?vela=Noches de Tulum&precio=200.00&imagen=vela-tulum.jpg" class="boton-pedido">
+                    Hacer Pedido | $200 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-cafe-leche.jpg" alt="Vela Café con Leche" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Café con Leche"</span>
+                Aroma: café y crema.
+                <span class="precio">💰 Precio: $190 MXN</span>
+                <a href="pedido.html?vela=Café con Leche&precio=190.00&imagen=vela-cafe-leche.jpg" class="boton-pedido">
+                    Hacer Pedido | $190 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-selva.jpg" alt="Vela Selva Tropical" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Selva Tropical"</span>
+                Aroma: frutas exóticas y flores.
+                <span class="precio">💰 Precio: $210 MXN</span>
+                <a href="pedido.html?vela=Selva Tropical&precio=210.00&imagen=vela-selva.jpg" class="boton-pedido">
+                    Hacer Pedido | $210 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-bosque-paseo.jpg" alt="Vela Paseo por el Bosque" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Paseo por el Bosque"</span>
+                Aroma: madera y tierra húmeda.
+                <span class="precio">💰 Precio: $180 MXN</span>
+                <a href="pedido.html?vela=Paseo por el Bosque&precio=180.00&imagen=vela-bosque-paseo.jpg"
+                    class="boton-pedido">
+                    Hacer Pedido | $180 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-rosa-inglesa.jpg" alt="Vela Rosa Inglesa" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Rosa Inglesa"</span>
+                Aroma: rosas y té.
+                <span class="precio">💰 Precio: $220 MXN</span>
+                <a href="pedido.html?vela=Rosa Inglesa&precio=220.00&imagen=vela-rosa-inglesa.jpg" class="boton-pedido">
+                    Hacer Pedido | $220 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-mar.jpg" alt="Vela Viento de Mar" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Viento de Mar"</span>
+                Aroma: sal y citronela.
+                <span class="precio">💰 Precio: $190 MXN</span>
+                <a href="pedido.html?vela=Viento de Mar&precio=190.00&imagen=vela-mar.jpg" class="boton-pedido">
+                    Hacer Pedido | $190 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-navidad.jpg" alt="Vela Cena de Navidad" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Cena de Navidad"</span>
+                Aroma: canela y clavo.
+                <span class="precio">💰 Precio: $200 MXN</span>
+                <a href="pedido.html?vela=Cena de Navidad&precio=200.00&imagen=vela-navidad.jpg" class="boton-pedido">
+                    Hacer Pedido | $200 MXN
+                </a>
+            </div>
+        </li>
+        <li>
+            <img src="vela-suenos.jpg" alt="Vela Jardín de Sueños" class="vela-imagen">
+            <div class="vela-info">
+                <span class="titulo">Vela "Jardín de Sueños"</span>
+                Aroma: lavanda y miel.
+                <span class="precio">💰 Precio: $210 MXN</span>
+                <a href="pedido.html?vela=Jardín de Sueños&precio=210.00&imagen=vela-suenos.jpg" class="boton-pedido">
+                    Hacer Pedido | $210 MXN
+                </a>
+            </div>
+        </li>
+    </ol>
+
+    <div class="navegacion">
+        <a href="catalogo2.html">← Catálogo Anterior (Pág. 2)</a>
+        <a href="catalogo1.html">Catálogo Principal (Pág. 1)</a>
+        <a href="catalogo-halloween.html" class="halloween-link">¡Colección Halloween! 🎃</a>
+    </div>
+</body>
+
+</html>
